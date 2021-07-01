@@ -1,0 +1,95 @@
+@import "../../scss/index.scss";
+
+.first-preferences {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  margin-top: 1em;
+
+  h4 {
+    margin: 0;
+    color: $action;
+  }
+
+  h6 {
+    text-align: center;
+    color: $action;
+    font-size: 14px;
+    overflow-wrap: break-word;
+  }
+
+  i.icon {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    color: $action;
+    margin: auto;
+    margin-top: 0.5em;
+  }
+
+  svg {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    color: $action;
+    text-align: center;
+    margin: auto;
+    margin-top: 0.5em;
+  }
+
+  .ui.card:hover {
+    i.icon,
+    svg,
+    h6 {
+      color: $danger;
+    }
+
+    box-shadow: 0 1px 3px 0 $danger, 0 0 0 1px $danger;
+    transition: box-shadow 0.1s ease, transform 0.1s ease;
+  }
+
+  .ui.card.active {
+    i.icon,
+    svg,
+    h6 {
+      color: $danger;
+    }
+    box-shadow: 0 1px 3px 0 $danger, 0 0 0 1px $danger;
+    transition: box-shadow 0.1s ease, transform 0.1s ease;
+  }
+  .grid-preferences {
+    margin-top: 1em !important;
+    margin-left: 0 !important;
+  }
+
+  .save-preferences-button {
+    background-color: $action !important;
+    color: $font-light !important;
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .ui.button:hover {
+    background-color: white !important;
+    color: $action !important;
+  }
+
+  .ui.button:focus {
+    background-color: $action !important;
+    color: $font-light !important;
+  }
+
+  .error-message {
+    font-size: smaller;
+    color: $danger;
+  }
+
+  .input {
+    margin-bottom: 20px;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
