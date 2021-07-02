@@ -85,12 +85,29 @@ const VotingScreen = ({ setItVoted, chain }) => {
     setErrorSave(false);
   };
 
+  const checkErrors = () => {
+    if (identifier === "") {
+      setErrorIdentifier(true);
+    } else if (identifier.length !== 7) {
+      setErrorLengthId(true);
+      setErrorIdentifier(false);
+    } else {
+      setErrorIdentifier(false);
+      setErrorLengthId(false);
+    }
+  };
   const onClickSave = async () => {
     if (preferences.length < 1) {
       setErrorSave(true);
+      setErrorIdentifier(false);
+      setErrorLengthId(false);
     } else if (identifier === "") {
+      setErrorSave(false);
       setErrorIdentifier(true);
-    } else if (identifier.length < 8) {
+      setErrorLengthId(false);
+    } else if (identifier.length !== 8) {
+      setErrorSave(false);
+      setErrorIdentifier(false);
       setErrorLengthId(true);
     } else {
       //  verificar que no haya votado
@@ -119,6 +136,7 @@ const VotingScreen = ({ setItVoted, chain }) => {
             value={identifier}
             onChange={(e) => {
               setIdentifier(e.target.value);
+              checkErrors();
             }}
           />
         </Form>
@@ -138,7 +156,7 @@ const VotingScreen = ({ setItVoted, chain }) => {
         )}
         {errorLengthId && (
           <p className="error-message">
-            La clave de elector tiene 8 caracteres
+            La clave de elector debe tener 8 caracteres
           </p>
         )}
 

@@ -36,7 +36,7 @@ export class BlockChain {
     this.difficulty = difficulty;
   }
   createFirstBlock(genesis) {
-    return new Block(0, genesis);
+    return new Block({}, genesis);
   }
   getLastBlock() {
     return this.chain[this.chain.length - 1];
@@ -110,4 +110,4 @@ export class BlockChain {
   }
 }
 
-export const chain = new BlockChain("primer voto", "00000");
+export const chain = new BlockChain("", "0000");
