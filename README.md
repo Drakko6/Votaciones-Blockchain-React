@@ -8,6 +8,6 @@ Proyecto de sistema de votaciones usando blockchain
 ### npm o yarn
 ### Instalar dependencias con comando npm install o yarn
 
-Para correr la aplicación basta con correr en el directorio raíz del proyecto
+## Para correr la aplicación basta con correr en el directorio raíz del proyecto
 
 ### npm run start o yarn start
